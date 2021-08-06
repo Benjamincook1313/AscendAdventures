@@ -1,17 +1,14 @@
-import { Header } from './Components/App.style'
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import Home from './Components/Home'
+
 
 function App() {
-
-
-
   return (
-    <div >
-      {/* <header>Hello World</header> */}
-      <Header >
-        <h1>Ascend Adventures</h1>
-      </Header>
-      <footer></footer>
-    </div>
+    <HashRouter>
+      <Switch>
+        <Route path='/' exact component={ Home } />
+      </Switch>
+    </HashRouter>
   );
 }
 
