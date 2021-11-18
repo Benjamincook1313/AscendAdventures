@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './Home.css'
 import Nav from './Nav/Nav'
 import Footer from './Footer/Footer'
-import axios from 'axios'
+import Shop from './Shop/Shop'
+// import axios from 'axios'
 
 export default class Home extends Component{
   constructor(){
@@ -10,7 +11,8 @@ export default class Home extends Component{
 
     this.state = {
       darkMode: false,
-      userData: {}
+      userData: {},
+      selectedPage: 'Shop'
     }
   };
 
@@ -21,16 +23,29 @@ export default class Home extends Component{
     // console.log(data)
   };
 
-
+  
   render() {
-    
-    console.log('Hello')
+    const { selectedPage } = this.state
+
+    const page = () => {
+      switch(selectedPage){
+        case 'Shop':
+          return <Shop/>
+        default:
+          return null
+      }
+    };
+
+    // console.log('Hello')
     return (
-      <div>
+      <div className='Home'>
         <div className='Title'>
-          <h1 > Ascend Adventures </h1>
+          <h1> Ascend Adventures </h1>
           <p>( Where Spirit meets Earth )</p>
         </div>
+        <Main>
+          {page()}
+        </Main>
         <Nav />
         <Footer/>
       </div>
