@@ -1,0 +1,8 @@
+.Title{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(166, 221, 243);
+  flex-direction: column;
+  padding: 5px;
+}
